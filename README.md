@@ -1,8 +1,8 @@
-# 🇧🇷 Lista de Bancos do Brasil – JSON (ISPB)
+# Lista de Bancos do Brasil – JSON (ISPB)
 
-Repositório estático com a lista de **bancos brasileiros** em **JSON**, derivada do **Banco Central do Brasil** (Participantes do STR).
+Este repositório contém a lista de bancos brasileiros em formato JSON. Os dados são derivados do Banco Central do Brasil (Participantes do STR).
 
-Cada registro do `banks.json` segue o formato abaixo:
+Cada registro no arquivo `banks.json` possui a seguinte estrutura:
 
 ```json
 {
@@ -18,7 +18,7 @@ Cada registro do `banks.json` segue o formato abaixo:
 
 ---
 
-## 📂 Como acessar o JSON
+## Acesso ao arquivo
 
 ### Raw (GitHub)
 
@@ -34,7 +34,7 @@ https://cdn.jsdelivr.net/gh/marcosantdm/bancos-br-ispb@latest/banks.json
 
 ---
 
-## 📌 Exemplos de consumo
+## Exemplos de Consumo
 
 ### cURL
 
@@ -60,7 +60,7 @@ import axios from 'axios';
 
 const url = 'https://raw.githubusercontent.com/marcosantdm/bancos-br-ispb/main/banks.json';
 const { data } = await axios.get(url, { timeout: 10000 });
-console.log(`Total: ${data.length}`);
+console.log(`Total de registros: ${data.length}`);
 ```
 
 ### PHP (Laravel HTTP Client)
@@ -70,7 +70,6 @@ $response = Http::timeout(10)->get('https://raw.githubusercontent.com/marcosantd
 $banks = $response->json();
 
 $original = collect($banks)->firstWhere('Número_Código', 212);
-// dd($original);
 ```
 
 ### Python (requests)
@@ -86,7 +85,7 @@ print(banks[0])
 
 ---
 
-## 🔎 Consultas no cliente (exemplos)
+## Consultas no cliente
 
 ### Buscar por ISPB
 
@@ -97,7 +96,7 @@ data.find(b => b.ISPB === 92894922)
 ### Buscar por código COMPE
 
 ```js
-data.find(b => b["Número_Código"] === 1) // Banco do Brasil
+data.find(b => b["Número_Código"] === 1)
 ```
 
 ### Buscar por parte do nome
@@ -108,13 +107,12 @@ data.filter(b => b.Nome_Extenso.toUpperCase().includes('BRASIL'))
 
 ---
 
-## 📖 Fonte oficial
+## Fonte Oficial
 
-* Banco Central do Brasil — Participantes do STR: [https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.pdf](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.pdf)
-* Para acessar em CSV substitua o prefixo .pdf por .csv ao final da URL, ou clique aqui: [https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv)
+Banco Central do Brasil – Participantes do STR: [https://www.bcb.gov.br/estabilidadefinanceira/participantesstr](https://www.bcb.gov.br/estabilidadefinanceira/participantesstr)
 
 ---
 
-## 📜 Licença
+## Licença
 
 MIT — livre para uso em projetos pessoais e comerciais.
