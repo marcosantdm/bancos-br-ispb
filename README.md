@@ -109,7 +109,9 @@ data.filter(b => b.Nome_Extenso.toUpperCase().includes('BRASIL'))
 
 ## Fonte Oficial
 
-Banco Central do Brasil – Participantes do STR: [https://www.bcb.gov.br/estabilidadefinanceira/participantesstr](https://www.bcb.gov.br/estabilidadefinanceira/participantesstr)
+Os dados são coletados diretamente do Banco Central do Brasil. Você pode conferir a fonte ou até mesmo baixar a lista em CSV:
+  - PDF oficial: [https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.pdf](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.pdf)
+  - CSV oficial: [https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv](https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv)
 
 ---
 
